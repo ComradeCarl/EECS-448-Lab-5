@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <form>
+    <label for="psw">Password</label><br>
+    <input type="password" id="psw" name="psw"><br>
+    <label for="vpsw">Confirmation</label><br>
+    <input type="password" id="vpsw" name="vpsw"><br>
+    <br>
+    <input type="submit" id="verify" value="Validate" onclick="validation()">
+  </form>
+  <script>
+    var first_input = document.getElementById("psw");
+    var second_input = document.getElementById("vpsw");
+
+    function validation() {
+      var length_check = (first_input.value.length >= 8) ? true : false;
+      var match_check = (first_input.value == second_input.value) ? true : false;
+
+      if (length_check == false) {
+        alert('Password must be at least 8 characters long');
+      }
+      else if ((length_check && match_check) == true) {
+        alert("Success!")
+      }
+      else {
+        alert("Passwords do not match");
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

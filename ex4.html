@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #id1 {
+      border-style: solid;
+      border-width: 0px;
+      border-color: none;
+      background: none;
+      background-color: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="id1">This text will change properties</h1>
+
+  <p>Red border</p>
+  <input type='text' id='red_border'></input>
+  <br>
+
+  <p>Green border</p>
+  <input type='text' id='green_border'></input>
+  <br>
+
+  <p>Blue border</p>
+  <input type='text' id='blue_border'></input>
+  <br>
+
+  <p>Enter a border width</p>
+  <input type='text' id='border_width'></input>
+  <br>
+
+  <p>Red background</p>
+  <input type='text' id='red_background'></input>
+  <br>
+
+  <p>Green background</p>
+  <input type='text' id='green_background'></input>
+  <br>
+
+  <p>Blue background</p>
+  <input type='text' id='blue_background'></input>
+  <br>
+
+  <br>
+  <button type="button" onclick="change_property()">
+    Click Me!</button>
+
+  <script>
+    var dummy_text = document.getElementById('id1');
+
+    function change_property() {
+      var colors = [[parseInt(document.getElementById('red_border').value), parseInt(document.getElementById('green_border').value), parseInt(document.getElementById('blue_border').value)], [parseInt(document.getElementById('red_background').value), parseInt(document.getElementById('green_background').value), parseInt(document.getElementById('blue_background').value)]];
+
+      dummy_text.style.borderColor = `RGB(${colors[0][0]}, ${colors[0][1]}, ${colors[0][2]})`;
+      dummy_text.style.borderWidth = document.getElementById('border_width').value;
+      dummy_text.style.backgroundColor = `RGB(${colors[1][0]}, ${colors[1][1]}, ${colors[1][2]})`;
+    }
+  </script>
+
+</body>
+
+</html>

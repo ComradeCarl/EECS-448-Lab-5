@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+  <img src="https://wiki.warthunder.com/images/thumb/2/22/ArtImage_M103.png/800px-ArtImage_M103.png" id="m103"
+    width="500px" height="500px">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Conqueror_front-left_2017_Bovington.jpg" id="conqueror"
+    width="500px" height="500px" hidden>
+  <img src="https://tanks-encyclopedia.com/ww2/soviet/photos/is3M.jpg" id="is3" width="500px" height="500px" hidden>
+  <img src="https://i.pinimg.com/736x/a5/74/a8/a574a86bdd0e91aeca46069b4d8b8509--red-army-tanks.jpg" id="is4"
+    width="500px" height="500px" hidden>
+  <img src="https://www.19fortyfive.com/wp-content/uploads/2021/07/T-10-Tank.jpg" id="t10" width="500px" height="500px"
+    hidden>
+
+
+  <br>
+  <button id='previous'>Previous</button>
+  <button id='next'>Next</button>
+
+
+  <script>
+
+    var index = 0;
+
+    const previous = document.getElementById('previous');
+    const next = document.getElementById('next');
+
+    var url_1 = "https://wiki.warthunder.com/images/thumb/2/22/ArtImage_M103.png/800px-ArtImage_M103.png";
+    var url_2 = "https://upload.wikimedia.org/wikipedia/commons/3/38/Conqueror_front-left_2017_Bovington.jpg";
+    var url_3 = "https://tanks-encyclopedia.com/ww2/soviet/photos/is3M.jpg";
+    var url_4 = "https://i.pinimg.com/736x/a5/74/a8/a574a86bdd0e91aeca46069b4d8b8509--red-army-tanks.jpg";
+    var url_5 = "https://www.19fortyfive.com/wp-content/uploads/2021/07/T-10-Tank.jpg";
+
+    var id_1 = "m103";
+    var id_2 = "conqueror";
+    var id_3 = "is3";
+    var id_4 = "is4";
+    var id_5 = "t10";
+
+    var id_array = [id_1, id_2, id_3, id_4, id_5];
+
+    previous.addEventListener("click", function () {
+      hide_image(id_array[index]);
+      (index - 1 < 0) ? (index = 4) : (index -= 1);
+      show_image(id_array[index]);
+    });
+
+    next.addEventListener("click", function () {
+      hide_image(id_array[index]);
+      (index + 1 > 4) ? (index = 0) : (index += 1);
+      show_image(id_array[index]);
+    })
+
+    function show_image(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function hide_image(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+  </script>
+</body>
+
+</html>
